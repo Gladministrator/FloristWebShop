@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="florist.master.cs" Inherits="Florist.florist" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Flower Shop</title>
+    <link href="Style/florist.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="page">
+            <asp:Panel runat="server" ID="navigationPanel">
+                <div class="divHeading">
+                    <img src="Images/FloristHeader.png" alt="Logo" />
+                </div>
+                <div class="divRight">
+                    <asp:LinkButton ID="lnkLoggedIn" runat="server" CssClass="labelLogin" 
+                        OnClick="lnkLoggedIn_Click">Loggedin</asp:LinkButton>
+                    <asp:LinkButton ID="lnkLogout" runat="server" CssClass="labelLogin" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+                </div>
+                <div>
+                    <asp:LinkButton ID="lnkHome" runat="server" CssClass="labelLogin" OnClick="lnkHome_Click">Home</asp:LinkButton>
+                    <asp:LinkButton ID="lnkProfile" runat="server" CssClass="labelLogin" OnClick="lnkProfile_Click">Profile</asp:LinkButton>
+                    <asp:LinkButton ID="lnkOrder" runat="server" CssClass="labelLogin" OnClick="lnkOrder_Click">Order</asp:LinkButton>
+                    <asp:LinkButton ID="lnkReview" runat="server" CssClass="labelLogin" OnClick="lnkReview_Click">Review History</asp:LinkButton>
+                </div>
+            </asp:Panel>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,204 @@
+﻿body {
+    font-family: Calibri;
+    font-size: large;
+    background-color: #88B04B;
+}
+
+.page {
+    margin: 20px auto 0px auto;
+    min-height: 450px;
+    width: 1024px;
+}
+
+.divHeading {
+    text-align: center;
+    height: 40px;
+}
+
+.divButtons {
+    text-align: center;
+    height: 35px;
+}
+
+.divRow {
+    margin-bottom: 16px;
+    height: 15px;
+}
+
+.divCol1 {
+    float: left;
+    width: 165px;
+    text-align: right;
+    margin-left: 35px;
+}
+
+.divColProfile {
+    width: 150px;
+    text-align: right;
+}
+
+.divCol2 {
+    float: left;
+    text-align: left;
+    padding-left: 8px;
+    width: 219px;
+}
+
+.button {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 12px;
+    height: 26px;
+}
+
+.divRight {
+    text-align: right;
+    font-weight: 600;
+    color: Black
+}
+
+.labelLogin {
+    font-family: Calibri;
+    font-size: 18px;
+    text-decoration: none;
+    color: darkviolet;
+    padding: 0px 10px;
+    background-color:darkkhaki;
+    border:2px solid black;
+}
+
+.password-box {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.divLoginLeft {
+    margin-top: 159px;
+    margin-left: 48px;
+    float: left;
+    width: 486px;
+}
+
+.divLoginRight {
+    margin-top: 159px;
+    margin-left: 6px;
+    float: left;
+    width: 305px;
+}
+
+.labelSpacing {
+    font-family: Calibri;
+    font-size: large;
+    width: 185px;
+    padding-left: 3px;
+    margin-right: 7px;
+    font-weight: 500;
+}
+
+.labelSpacingPassword {
+    width: 185px;
+    padding-left: 3px;
+    margin-right: 19px;
+    font-weight: 500;
+}
+
+.landingImages {
+    width: 450px;
+    text-align: center;
+    margin-top: 80px;
+    float: left;
+}
+
+.divProfileHeading {
+    margin-top: 38px;
+}
+
+.divOrderHeading {
+    margin-top: 18px;
+    margin-left: 3px;
+}
+
+.lbl-error-msg{
+    color:crimson;
+    font-weight:700;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.delete-button{
+    color:darkred;
+    font-weight:bold;
+}
+
+.centered-field {
+    display: block;
+    text-align: center;
+}
+
+.main-recovery-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.recovery-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    row-gap:10px;
+    font-size:18px;
+}
+
+.label-recovery {
+    margin-top: 10px;
+    color: #9a5400;
+    font-size: 20px;
+}
+
+.flex-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    row-gap:10px;
+}
+
+.flex-item{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.styled-btn {
+    background-color: #4CAF50;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.styled-btn:hover {
+    cursor: pointer;
+    background-color: #4CAF70;
+    color: black;
+}
+
+.link-button {
+    text-decoration: none;
+    padding: 3px;
+    border: 1px groove gray;
+    color: #804600;
+    background-color: #00b362;
+    font-size: 16px;
+}
+
+.drop-down-menu {
+    background-color: cadetblue;
+    border-radius: 10px;
+    border: 2px solid darkblue;
+}
