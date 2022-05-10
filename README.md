@@ -29,18 +29,22 @@ The Login page where users can login, recover their account, or create a new acc
 
 
 Create Account Page
+
 ![CreateAccount](ProjectImages/CreateAccount.PNG)
 
 Account Recovery
-![RecoverAccount](ProjectImages/RecoverAccount.PNG)
+
+![AccountRecovery](ProjectImages/AccountRecovery.PNG)
 
 
 Order page where users can order items
+
 ![OrderMenu](ProjectImages/OrderMenu.PNG)
 
 
-Review previously completed orders
-![OrderReview](ProjectImages/OrderReview.PNG)
+View previously completed orders
+
+![OrderReview](ProjectImages/OrderHistory.PNG)
 
 
 ### Design & Requirements
