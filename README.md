@@ -21,6 +21,28 @@ A basic flower shop web application built with C#, .NET, and SQL.
 - Create reusable stored procedures in SQL Server
 - Make a "Create, Read, Update, and Delete" app
 
+### Application Walkthrough
+
+The Login page where users can login, recover their account, or create a new account.
+
+![Login](ProjectImages/LoginScreen.PNG)
+
+
+Create Account Page
+![CreateAccount](ProjectImages/CreateAccount.PNG)
+
+Account Recovery
+![RecoverAccount](ProjectImages/RecoverAccount.PNG)
+
+
+Order page where users can order items
+![OrderMenu](ProjectImages/OrderMenu.PNG)
+
+
+Review previously completed orders
+![OrderReview](ProjectImages/OrderReview.PNG)
+
+
 ### Design & Requirements
 
 The application was designed to allow for new accounts to be created, updated, and allow password resets.
