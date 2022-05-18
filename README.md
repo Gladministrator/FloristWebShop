@@ -5,8 +5,7 @@ A basic flower shop web application built with C#, .NET, and SQL.
 ## How to Use
 
     - Setup the database by creating a new database in SQL server called "Flowers" in SQL Server Express 2008
-    - After creating the database, use the "script.sql" file and execute the code. This will create 
-    the stored procedures and tables.
+    - After creating the database, use the "script.sql" file and execute the code. This will create stored procedures and tables.
     - Make sure SQL Server is running in Windows Services
     - Open the project solution and run the server
 
