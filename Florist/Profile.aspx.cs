@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 
 namespace Florist
 {
-    public partial class Profile : System.Web.UI.Page
+    public partial class Profile : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,7 +54,7 @@ namespace Florist
             {
                 UpdateUserRow(databaseConnection, tableData);
             }
-            
+
             else if (btnSave.Text == "Save and Create")
             {
                 InsertUserData(databaseConnection, tableData);
@@ -89,11 +87,11 @@ namespace Florist
                 int id = (int)tableInfo.Tables[0].Rows[0]["UserID"];
                 lblErrorMsg.Text = connector.UpdateUserData(id, txtLastName.Text, txtFirstName.Text,
                 txtUserName.Text, txtPassword.Text, txtPhone.Text, txtEmail.Text, txtSecretQuestion1.Text,
-                txtSecretAnswer1.Text, txtSecretQuestion2.Text, txtSecretAnswer2.Text) ;
+                txtSecretAnswer1.Text, txtSecretQuestion2.Text, txtSecretAnswer2.Text);
             }
         }
-        
-        private void InsertUserData (DatabaseConnection connector, DataSet tableInfo)
+
+        private void InsertUserData(DatabaseConnection connector, DataSet tableInfo)
         {
             if (tableInfo.Tables[0].Rows.Count > 0)
             {
@@ -132,7 +130,7 @@ namespace Florist
         }
         private void Trimmer(List<TextBox> textboxes)
         {
-            foreach(TextBox textbox in textboxes)
+            foreach (TextBox textbox in textboxes)
             {
                 textbox.Text = textbox.Text.Trim();
             }

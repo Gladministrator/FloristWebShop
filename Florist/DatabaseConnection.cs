@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Web.UI.WebControls;
 
 
 namespace Florist
@@ -24,10 +20,12 @@ namespace Florist
             dataSet = new DataSet();
         }
 
-        public bool CheckValidUser (string userName, string password)
+        public bool CheckValidUser(string userName, string password)
         {
-            SqlCommand cmd = new SqlCommand("Login_Check", connection);
-            cmd.CommandType = CommandType.StoredProcedure;
+            SqlCommand cmd = new SqlCommand("Login_Check", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             cmd.Parameters.AddWithValue("@UserName", userName);
             cmd.Parameters.AddWithValue("@Password", password);
 
@@ -37,7 +35,7 @@ namespace Florist
                 cmd.Prepare();
                 return Convert.ToBoolean(cmd.ExecuteScalar());
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -52,8 +50,10 @@ namespace Florist
             SqlCommand cmd = new SqlCommand("Get_User_Info", connection);
             cmd.Parameters.AddWithValue("@UserName", userName);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.SelectCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                SelectCommand = cmd
+            };
 
             try
             {
@@ -88,8 +88,10 @@ namespace Florist
             cmd.Parameters.AddWithValue("@Secret2", question2);
             cmd.Parameters.AddWithValue("@Answer2", answer2);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.UpdateCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                UpdateCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -126,8 +128,10 @@ namespace Florist
             cmd.Parameters.AddWithValue("@Answer2", answer2);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.InsertCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                InsertCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -144,12 +148,16 @@ namespace Florist
                 connection.Close();
             }
         }
-        public DataSet GetTableData (string storedProcedure)
+        public DataSet GetTableData(string storedProcedure)
         {
-            SqlCommand cmd = new SqlCommand(storedProcedure, connection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.SelectCommand = cmd;
+            SqlCommand cmd = new SqlCommand(storedProcedure, connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            adapter = new SqlDataAdapter(cmd)
+            {
+                SelectCommand = cmd
+            };
 
             try
             {
@@ -172,8 +180,10 @@ namespace Florist
             cmd.Parameters.AddWithValue("@UserID", id);
             cmd.Parameters.AddWithValue("@Password", password);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.InsertCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                InsertCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -191,8 +201,8 @@ namespace Florist
             }
         }
 
-        public string GenerateInvoice(int userID, int itemNum, int flowerID, string name, 
-        string street, string apartment, string city, int region, int country, 
+        public string GenerateInvoice(int userID, int itemNum, int flowerID, string name,
+        string street, string apartment, string city, int region, int country,
         string ZipCode)
         {
             SqlCommand cmd = new SqlCommand("Generate_Invoice", connection);
@@ -208,14 +218,16 @@ namespace Florist
             cmd.Parameters.AddWithValue("@ZipCode", ZipCode);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.InsertCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                InsertCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
                 connection.Open();
                 return cmd.ExecuteScalar().ToString();
-                
+
             }
             catch (Exception ex)
             {
@@ -229,37 +241,41 @@ namespace Florist
 
         public DataSet GridData(int identityNumber)
         {
-                SqlCommand cmd = new SqlCommand("Get_Order_Details", connection);
-                cmd.Parameters.AddWithValue("@IdentityNumber", identityNumber);
-                cmd.CommandType = CommandType.StoredProcedure;
-                adapter = new SqlDataAdapter(cmd);
-                adapter.SelectCommand = cmd;
+            SqlCommand cmd = new SqlCommand("Get_Order_Details", connection);
+            cmd.Parameters.AddWithValue("@IdentityNumber", identityNumber);
+            cmd.CommandType = CommandType.StoredProcedure;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                SelectCommand = cmd
+            };
 
-                try
-                {
-                    dataSet.Clear();
-                    connection.Open();
-                    adapter.Fill(dataSet);
-                    return dataSet;
-                }
-                catch
-                {
-                    return null;
-                }
-                finally
-                {
-                    connection.Close();
-                }
+            try
+            {
+                dataSet.Clear();
+                connection.Open();
+                adapter.Fill(dataSet);
+                return dataSet;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
-        public string Insert_Item(int flower, int invoiceNumber )
+        public string Insert_Item(int flower, int invoiceNumber)
         {
 
             SqlCommand cmd = new SqlCommand("Insert_Item", connection);
             cmd.Parameters.AddWithValue("@Flower", flower);
             cmd.Parameters.AddWithValue("@InvoiceID", invoiceNumber);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.InsertCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                InsertCommand = cmd
+            };
 
             try
             {
@@ -283,8 +299,10 @@ namespace Florist
             cmd.Parameters.AddWithValue("@InvoiceNumber", invoiceID);
             cmd.Parameters.AddWithValue("@ItemNumber", itemNumber);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.DeleteCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                DeleteCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -306,8 +324,10 @@ namespace Florist
             SqlCommand cmd = new SqlCommand("Cancel_Order", connection);
             cmd.Parameters.AddWithValue("@InvoiceID", invoiceID);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.DeleteCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                DeleteCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -332,8 +352,10 @@ namespace Florist
             cmd.Parameters.AddWithValue("@TotalPrice", totalPrice);
             cmd.Parameters.AddWithValue("@ContactName", name);
             cmd.CommandType = CommandType.StoredProcedure;
-            adapter = new SqlDataAdapter(cmd);
-            adapter.InsertCommand = cmd;
+            adapter = new SqlDataAdapter(cmd)
+            {
+                InsertCommand = cmd
+            };
             try
             {
                 cmd.Prepare();
@@ -353,8 +375,10 @@ namespace Florist
         public DataSet GetOrderHistory(string storedProcedure, int userID)
         {
             dataSet.Clear();
-            SqlCommand cmd = new SqlCommand(storedProcedure, connection);
-            cmd.CommandType = CommandType.StoredProcedure;
+            SqlCommand cmd = new SqlCommand(storedProcedure, connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             cmd.Parameters.AddWithValue("@UserID", userID);
             adapter = new SqlDataAdapter(cmd)
             {
@@ -362,7 +386,7 @@ namespace Florist
             };
 
             try
-            {   
+            {
                 connection.Open();
                 adapter.Fill(dataSet);
                 return dataSet;

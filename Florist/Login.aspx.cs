@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 
 namespace Florist
 {
@@ -13,7 +8,7 @@ namespace Florist
         protected void Page_Load(object sender, EventArgs e)
         {
             ((Panel)Master.FindControl("navigationPanel")).Visible = false;
-            loginText.InnerText = Request.QueryString["LoginText"] ?? 
+            loginText.InnerText = Request.QueryString["LoginText"] ??
             "Please Login or create a profile";
             loginText2.InnerText = Request.QueryString["LoginText2"] ?? "";
         }
@@ -26,8 +21,6 @@ namespace Florist
 
             if (databaseConnect.CheckValidUser(userName, password))
             {
-                DataSet userData = databaseConnect.GetUserData(userName);
-
                 Session["userID"] = userName;
                 lblMsg.Visible = false;
                 Response.Redirect("LandingPage.aspx");

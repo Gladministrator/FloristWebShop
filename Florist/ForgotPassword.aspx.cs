@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
+using System.Web.UI.WebControls;
 
 namespace Florist
 {
@@ -26,7 +22,7 @@ namespace Florist
                 pnlRecoveryQuestions.Visible = false;
                 lblErrorUserName.Visible = true;
             }
-            else 
+            else
             {
                 lblErrorUserName.Visible = false;
                 txtUserName.ReadOnly = true;
@@ -62,7 +58,7 @@ namespace Florist
         {
             int id = Convert.ToInt32(Session["id"]);
             DatabaseConnection databaseConnection = new DatabaseConnection();
-            lblCompletion.Text = databaseConnection.ResetPassword(id,txtResetPassword.Text);
+            lblCompletion.Text = databaseConnection.ResetPassword(id, txtResetPassword.Text);
             pnlCompletion.Visible = true;
         }
 

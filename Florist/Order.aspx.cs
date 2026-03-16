@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Florist
 {
@@ -98,13 +97,13 @@ namespace Florist
                 string fullName = $"{txtFirstName.Text.Trim()} {txtLastName.Text.Trim()}";
 
                 number = connection.GenerateInvoice(id, 1, Convert.ToInt32(dlFlower.SelectedValue),
-                    fullName,txtStreetAddress.Text.Trim(), apt, txtCity.Text.Trim(), 
+                    fullName, txtStreetAddress.Text.Trim(), apt, txtCity.Text.Trim(),
                     Convert.ToInt32(dlRegion.SelectedValue), Convert.ToInt32(dlCountry.SelectedValue),
                     txtZipCode.Text.Trim()
                     );
 
                 ViewState["invoiceID"] = number;
-                
+
                 if (int.TryParse(number, out int result))
                 {
                     UpdateGrid(result);
